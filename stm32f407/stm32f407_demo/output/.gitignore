@@ -1,0 +1,10 @@
+# Auto generated files when build
+*.crf
+*.axf
+*.htm
+*.dep
+*.lnp
+*.lst
+*.sct
+*.hex
+

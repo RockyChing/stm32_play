@@ -616,6 +616,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\driver\delay.c</FilePath>
             </File>
+            <File>
+              <FileName>driver_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\driver_init.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -635,6 +640,11 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\user\system_stm32f4xx.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\led.c</FilePath>
             </File>
           </Files>
         </Group>

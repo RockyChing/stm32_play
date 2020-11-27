@@ -22,6 +22,7 @@
 #include <misc_util.h>
 
 
+extern void driver_init(void);
 static __IO uint32_t uwTimingDelay;
 RCC_ClocksTypeDef RCC_Clocks;
 
@@ -41,6 +42,8 @@ int main(void)
 
 	uint32_t uid[3];
 	GPIO_InitTypeDef GPIO_InitStructure;
+
+	driver_init();
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
 

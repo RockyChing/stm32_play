@@ -12,6 +12,8 @@
 #define _UTIL_S_H
 
 
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
+
 void sleep_us(uint32_t us);
 void sleep_ms(uint32_t ms);
 void sleep_s(uint32_t s);

@@ -8,12 +8,13 @@
  * You may clone this project at: https://github.com/RockyChing/stm32_play.git
  */
 
-#ifndef _STM32F40X_H
-#define _STM32F40X_H
+#ifndef _STM32F40X_LED_H
+#define _STM32F40X_LED_H
 
 enum {
 	LED_RED = 0,
 	LED_GREEN = 1,
+	LED_MAX
 };
 
 enum {
@@ -31,5 +32,5 @@ int led_init(void);
  */
 int led_ctl(int which, int onoff);
 
-#endif /* _STM32F40X_H */
+#endif /* _STM32F40X_LED_H */
 

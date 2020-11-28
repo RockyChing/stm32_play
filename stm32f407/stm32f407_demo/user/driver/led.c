@@ -27,7 +27,7 @@ struct led_driver {
 	uint32_t gpio_active_state;
 };
 
-static struct led_driver g_leds[2];
+static struct led_driver g_leds[LED_MAX];
 
 static void led_config(struct led_driver *led)
 {

@@ -14,6 +14,7 @@
 #include <utils.h>
 #include <log_util.h>
 #include <led.h>
+#include <uart.h>
 
 
 struct driver_struct {
@@ -22,8 +23,9 @@ struct driver_struct {
 };
 
 static struct driver_struct g_drivers[] = {
-	{ "led",      led_init },
-	{ NULL,       NULL },
+	{ "led",      led_init           },
+	{ "uart",     uart_init          },
+	{ NULL,       NULL               },
 };
 
 

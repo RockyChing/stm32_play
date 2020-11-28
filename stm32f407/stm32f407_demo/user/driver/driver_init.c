@@ -13,8 +13,8 @@
 
 #include <utils.h>
 #include <log_util.h>
+#include <led.h>
 
-#include "led.h"
 
 struct driver_struct {
 	const char *name;

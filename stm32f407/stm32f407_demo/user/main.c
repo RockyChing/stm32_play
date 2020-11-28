@@ -20,6 +20,7 @@
 #include <cmn_hdr.h>
 #include <log_util.h>
 #include <misc_util.h>
+#include <led.h>
 
 
 extern void driver_init(void);
@@ -41,27 +42,23 @@ int main(void)
        refer to system_stm32f4xx.c file */
 
 	uint32_t uid[3];
-	GPIO_InitTypeDef GPIO_InitStructure;
 
 	driver_init();
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
-
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOF, &GPIO_InitStructure);
 	log_info("test\n");
 	memset(uid, 0, sizeof(uid));
 	stf4_get_cpuid(uid);
 
 	while(1) {
-		GPIO_SetBits(GPIOF,GPIO_Pin_9|GPIO_Pin_10);
-		delay(0x7FFFFF);
-		GPIO_ResetBits(GPIOF,GPIO_Pin_9|GPIO_Pin_10);
-		delay(0x7FFFFF);
+		led_ctl(LED_RED, LED_CTL_ON);
+		delay(0x8FFFFF);
+		led_ctl(LED_GREEN, LED_CTL_ON);
+		delay(0x8FFFFF);
+
+		led_ctl(LED_RED, LED_CTL_OFF);
+		delay(0x8FFFFF);
+		led_ctl(LED_GREEN, LED_CTL_OFF);
+		delay(0x8FFFFF);
 	}
 }
 

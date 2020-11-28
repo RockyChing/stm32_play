@@ -626,6 +626,16 @@
               <FileType>1</FileType>
               <FilePath>..\user\driver\led.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\sys_int.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

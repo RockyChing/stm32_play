@@ -21,6 +21,7 @@
 #include <log_util.h>
 #include <misc_util.h>
 #include <led.h>
+#include <uart.h>
 
 
 extern void driver_init(void);
@@ -50,11 +51,13 @@ int main(void)
 	stf4_get_cpuid(uid);
 
 	while(1) {
+		log_info("open led...");
 		led_ctl(LED_RED, LED_CTL_ON);
 		delay(0x8FFFFF);
 		led_ctl(LED_GREEN, LED_CTL_ON);
 		delay(0x8FFFFF);
 
+		log_info("close led...");
 		led_ctl(LED_RED, LED_CTL_OFF);
 		delay(0x8FFFFF);
 		led_ctl(LED_GREEN, LED_CTL_OFF);

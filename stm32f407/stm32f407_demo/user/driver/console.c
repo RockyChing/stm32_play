@@ -8,8 +8,11 @@
  * You may clone this project at: https://github.com/RockyChing/stm32_play.git
  */
 
-#include <stdio.h>
+#include <cmn_hdr.h>
+#include <uart.h>
 
+
+#define CONFIG_PRINTF_EN
 
 #pragma import(__use_no_semihosting)
 
@@ -26,11 +29,11 @@ void _sys_exit(int x)
 
 int fputc(int ch, FILE *f)
 {
-#if 0
-	while((USART1->ISR & 0X40) == 0) {}
-
-	USART1->TDR = (u8) ch;
+#ifdef CONFIG_PRINTF_EN
+	const uint8_t c = (uint8_t) ch;
+	uart_debug_send(&c, 1);
 #endif
+
 	return ch;
 }
 

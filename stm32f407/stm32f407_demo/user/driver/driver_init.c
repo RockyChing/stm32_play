@@ -38,7 +38,7 @@ void driver_init(void)
 
 	for (i = 0; i < ARRAY_SIZE(g_drivers); i ++) {
 		driver = &g_drivers[i];
-		if (NULL != driver) {
+		if (NULL != driver && NULL != driver->init) {
 			name = driver->name ? driver->name : "null";
 			res = driver->init();
 			if (res < 0) {

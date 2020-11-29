@@ -43,12 +43,20 @@ int main(void)
        refer to system_stm32f4xx.c file */
 
 	uint32_t uid[3];
+	stf4_clock_t clk;
 
 	driver_init();
 
-	log_info("test\n");
 	memset(uid, 0, sizeof(uid));
 	stf4_get_cpuid(uid);
+	log_info("cpuid: %08x:%08x:%08x", uid[2], uid[1], uid[0]);
+
+	memset(&clk, 0, sizeof(stf4_clock_t));
+	stf4_get_sysclk(&clk);
+	log_info("SYSCLK_Frequency: %u", clk.SYSCLK_Frequency);
+	log_info("HCLK_Frequency: %u", clk.HCLK_Frequency);
+	log_info("PCLK1_Frequency: %u", clk.PCLK1_Frequency);
+	log_info("PCLK2_Frequency: %u", clk.PCLK2_Frequency);
 
 	while(1) {
 		log_info("open led...");

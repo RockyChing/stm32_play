@@ -10,6 +10,11 @@
 
 #include <cmn_hdr.h>
 
+#include <stm32f4xx_rcc.h>
+
+#include <misc_util.h>
+
+
 #ifndef __I
 #define __I volatile const /*!< Defines 'read only' permissions */
 #endif
@@ -29,5 +34,10 @@ void stf4_get_cpuid(uint32_t u_id[3])
 	u_id[0] = (uint32_t) STF4_CPUID->u_id0;
 	u_id[1] = (uint32_t) STF4_CPUID->u_id1;
 	u_id[2] = (uint32_t) STF4_CPUID->u_id2;
+}
+
+void stf4_get_sysclk(stf4_clock_t *clk)
+{
+	RCC_GetClocksFreq(clk);
 }
 

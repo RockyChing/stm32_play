@@ -11,8 +11,17 @@
 #ifndef _MISC_UTIL_H
 #define _MISC_UTIL_H
 
+
+typedef struct {
+	uint32_t SYSCLK_Frequency; /*!<  SYSCLK clock frequency expressed in Hz */
+	uint32_t HCLK_Frequency;   /*!<  HCLK clock frequency expressed in Hz   */
+	uint32_t PCLK1_Frequency;  /*!<  PCLK1 clock frequency expressed in Hz  */
+	uint32_t PCLK2_Frequency;  /*!<  PCLK2 clock frequency expressed in Hz  */
+} stf4_clock_t;
+
 void stf4_get_cpuid(uint32_t u_id[3]);
 
+void stf4_get_sysclk(stf4_clock_t *clk);
 
 
 

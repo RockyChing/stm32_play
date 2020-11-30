@@ -109,6 +109,8 @@ int uart_debug_send(const uint8_t *data, int len)
 		i += 1;
 		remain -= 1;
 	}
+
+	return len;
 }
 
 void USART1_IRQHandler(void)

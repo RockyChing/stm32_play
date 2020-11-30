@@ -636,6 +636,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\driver\sys_int.c</FilePath>
             </File>
+            <File>
+              <FileName>sys_tick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\sys_tick.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

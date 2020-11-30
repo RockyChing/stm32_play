@@ -9,7 +9,7 @@
  */
 
 #include <cmn_hdr.h>
-#include "../driver/delay.h"
+#include <delay.h>
 
 
 void sleep_us(uint32_t us)

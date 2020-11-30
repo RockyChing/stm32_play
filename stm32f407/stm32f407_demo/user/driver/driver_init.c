@@ -14,6 +14,7 @@
 #include <utils.h>
 #include <log_util.h>
 #include "sys_int.h"
+#include "sys_tick.h"
 #include <led.h>
 #include <uart.h>
 
@@ -25,6 +26,7 @@ struct driver_struct {
 
 static struct driver_struct g_drivers[] = {
 	{ "int",      interrupt_init     },
+	{ "stk",      sys_tick_init      },
 	{ "uart",     uart_init          },
 	{ "led",      led_init           },
 	{ NULL,       NULL               },

@@ -22,17 +22,11 @@
 #include <misc_util.h>
 #include <led.h>
 #include <uart.h>
+#include <delay.h>
 
 
 extern void driver_init(void);
-static __IO uint32_t uwTimingDelay;
-RCC_ClocksTypeDef RCC_Clocks;
 
-static void delay(__IO uint32_t nCount)
-{
-	while(nCount--)
-	{}
-}
 
 int main(void)
 {
@@ -61,15 +55,15 @@ int main(void)
 	while(1) {
 		log_info("open led...");
 		led_ctl(LED_RED, LED_CTL_ON);
-		delay(0x8FFFFF);
+		delay_ms(500);
 		led_ctl(LED_GREEN, LED_CTL_ON);
-		delay(0x8FFFFF);
+		delay_ms(500);
 
 		log_info("close led...");
 		led_ctl(LED_RED, LED_CTL_OFF);
-		delay(0x8FFFFF);
+		delay_ms(500);
 		led_ctl(LED_GREEN, LED_CTL_OFF);
-		delay(0x8FFFFF);
+		delay_ms(500);
 	}
 }
 

@@ -34,12 +34,13 @@ void delay_us(uint32_t us)
 
 void delay_ms(uint32_t ms)
 {
-	uint32_t div = STK_TIMEOUT_10MS - 1;
+	const uint32_t div = STK_TIMEOUT_10MS - 1;
+	const uint32_t idelay = div * 1000;
 	uint32_t quotient = ms / div;
 	uint32_t remain = ms % div;
 
 	while (quotient > 0) {
-		delay_us(div * 1000);
+		delay_us(idelay);
 		quotient -= 1;
 	}
 

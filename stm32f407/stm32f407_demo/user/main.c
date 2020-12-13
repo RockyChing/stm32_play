@@ -24,6 +24,7 @@
 #include <uart.h>
 #include <delay.h>
 #include <button.h>
+#include <ext_int.h>
 
 
 extern void driver_init(void);
@@ -54,6 +55,13 @@ int main(void)
 	log_info("PCLK2_Frequency: %u", clk.PCLK2_Frequency);
 
 	while(1) {
+#if BTN_INT
+		if (EINT_ACTIVE == eint_state_get()) {
+			led_ctl(LED_RED, LED_CTL_ON);
+		} else {
+			led_ctl(LED_RED, LED_CTL_OFF);
+		}
+#else
 		if (is_btn_active(BTN_UP)) {
 			log_info("BTN_UP active");
 			led_ctl(LED_RED, LED_CTL_ON);
@@ -67,6 +75,8 @@ int main(void)
 		} else {
 			led_ctl(LED_GREEN, LED_CTL_OFF);
 		}
+#endif
+
 #if 0
 		log_info("open led...");
 		led_ctl(LED_RED, LED_CTL_ON);

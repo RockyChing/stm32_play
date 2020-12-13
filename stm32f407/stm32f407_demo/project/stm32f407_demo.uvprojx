@@ -641,6 +641,16 @@
               <FileType>1</FileType>
               <FilePath>..\user\driver\sys_tick.c</FilePath>
             </File>
+            <File>
+              <FileName>button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\button.c</FilePath>
+            </File>
+            <File>
+              <FileName>ext_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\ext_int.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -18,7 +18,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-
+#include "build_config.h"
 
 
 #endif /* _CMN_HDR_H */

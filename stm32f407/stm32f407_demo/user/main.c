@@ -23,6 +23,7 @@
 #include <led.h>
 #include <uart.h>
 #include <delay.h>
+#include <button.h>
 
 
 extern void driver_init(void);
@@ -53,6 +54,20 @@ int main(void)
 	log_info("PCLK2_Frequency: %u", clk.PCLK2_Frequency);
 
 	while(1) {
+		if (is_btn_active(BTN_UP)) {
+			log_info("BTN_UP active");
+			led_ctl(LED_RED, LED_CTL_ON);
+		} else {
+			led_ctl(LED_RED, LED_CTL_OFF);
+		}
+
+		if (is_btn_active(BTN_DOWN)) {
+			log_info("BTN_DOWN active");
+			led_ctl(LED_GREEN, LED_CTL_ON);
+		} else {
+			led_ctl(LED_GREEN, LED_CTL_OFF);
+		}
+#if 0
 		log_info("open led...");
 		led_ctl(LED_RED, LED_CTL_ON);
 		delay_ms(500);
@@ -64,6 +79,7 @@ int main(void)
 		delay_ms(500);
 		led_ctl(LED_GREEN, LED_CTL_OFF);
 		delay_ms(500);
+#endif
 	}
 }
 

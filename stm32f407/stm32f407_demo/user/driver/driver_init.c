@@ -16,6 +16,7 @@
 #include "sys_int.h"
 #include "sys_tick.h"
 #include <led.h>
+#include <button.h>
 #include <uart.h>
 
 
@@ -29,6 +30,7 @@ static struct driver_struct g_drivers[] = {
 	{ "stk",      sys_tick_init      },
 	{ "uart",     uart_init          },
 	{ "led",      led_init           },
+	{ "btn",      btn_init           },
 	{ NULL,       NULL               },
 };
 

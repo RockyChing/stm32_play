@@ -19,6 +19,7 @@
 #include <button.h>
 #include <ext_int.h>
 #include <uart.h>
+#include <i2c.h>
 
 
 struct driver_struct {
@@ -33,6 +34,8 @@ static struct driver_struct g_drivers[] = {
 	{ "led",      led_init           },
 	{ "btn",      btn_init           },
 	{ "eint",     eint_init          },
+	{ "i2c",      i2c_init           },
+	{ "i2c-at24c",at24c02_init       },
 	{ NULL,       NULL               },
 };
 

@@ -28,5 +28,18 @@ int _sys_debug(int level, const char *tag, const char *fmt, ...);
 #define log_debug(x...) _sys_debug(LOG_DEBUG, LOG_TAG, x)
 
 
+#define hex_dump(buf, len)	\
+	do { \
+		int i; \
+		char *p = (char*) buf; \
+		for(i = 0; i < len; i++) { \
+			if(0 == (i % 32) && 0 != i) \
+				printf("\n"); \
+			printf("%02x ", (p[i]&0xff)); \
+		} \
+		printf("\n"); \
+	} while(0)
+
+
 #endif /* _LOG_UTIL_H */
 

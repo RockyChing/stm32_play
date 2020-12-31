@@ -691,6 +691,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\utils\utils.c</FilePath>
             </File>
+            <File>
+              <FileName>md5.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\crypt\md5.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -604,6 +604,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>demo</GroupName>
+          <Files>
+            <File>
+              <FileName>demo_md5.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\demo\demo_md5.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>driver</GroupName>
           <Files>
             <File>

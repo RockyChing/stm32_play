@@ -25,6 +25,7 @@
 #include <delay.h>
 #include <button.h>
 #include <ext_int.h>
+#include <demo.h>
 
 
 extern void driver_init(void);
@@ -53,6 +54,10 @@ int main(void)
 	log_info("HCLK_Frequency: %u", clk.HCLK_Frequency);
 	log_info("PCLK1_Frequency: %u", clk.PCLK1_Frequency);
 	log_info("PCLK2_Frequency: %u", clk.PCLK2_Frequency);
+
+#if DEMO_MD5_EN
+	demo_md5();
+#endif
 
 	while(1) {
 #if BTN_INT

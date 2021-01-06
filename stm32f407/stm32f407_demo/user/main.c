@@ -20,6 +20,7 @@
 #include <cmn_hdr.h>
 #include <log_util.h>
 #include <misc_util.h>
+#include <version.h>
 #include <led.h>
 #include <uart.h>
 #include <delay.h>
@@ -29,6 +30,31 @@
 
 
 extern void driver_init(void);
+
+struct stm32_version {
+	/** major version. */
+	const uint16_t major;
+
+	/** minor version. */
+	const uint16_t minor;
+
+	/** micro version. */
+	const uint16_t micro;
+
+	/** nano version. */
+	const uint16_t nano;
+
+	/** release candidate suffix string, e.g. "-rc4". */
+	const char *rc;
+
+	/** For ABI compatibility only. */
+	const char *describe;
+};
+
+static const struct stm32_version g_version = {
+	STM32_MAJOR, STM32_MINOR, STM32_MICRO, STM32_NANO,
+	STM32_RC, "https://github.com/RockyChing/stm32_play.git"
+};
 
 
 int main(void)
@@ -43,6 +69,8 @@ int main(void)
 	stf4_clock_t clk;
 
 	driver_init();
+	log_info("libusb v%u.%u.%u.%u%s", g_version.major, g_version.minor,
+		g_version.micro, g_version.nano, g_version.rc);
 
 	memset(uid, 0, sizeof(uid));
 	stf4_get_cpuid(uid);

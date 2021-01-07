@@ -50,3 +50,9 @@ int fgetc(FILE *f)
 	return ch;
 }
 
+// Library reports error: __use_no_semihosting was requested, but _ttywrch was referenced
+void _ttywrch(int ch)
+{
+	ch = ch;
+}
+

@@ -11,6 +11,8 @@
 #include <cmn_hdr.h>
 #define LOG_TAG "driver"
 
+#include "stm32f4xx.h"
+
 #include <utils.h>
 #include <log_util.h>
 #include "sys_int.h"
@@ -19,6 +21,8 @@
 #include <button.h>
 #include <ext_int.h>
 #include <uart.h>
+#include <spi.h>
+#include <spi_w25qxx.h>
 
 
 struct driver_struct {
@@ -33,6 +37,8 @@ static struct driver_struct g_drivers[] = {
 	{ "led",      led_init           },
 	{ "btn",      btn_init           },
 	{ "eint",     eint_init          },
+	{ "spi",      spi_init           },
+	{ "n25qxx",   w25qxx_init        },
 	{ NULL,       NULL               },
 };
 

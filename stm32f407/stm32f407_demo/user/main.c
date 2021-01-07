@@ -27,6 +27,7 @@
 #include <button.h>
 #include <ext_int.h>
 #include <demo.h>
+#include <spi_w25qxx.h>
 
 
 extern void driver_init(void);
@@ -69,7 +70,7 @@ int main(void)
 	stf4_clock_t clk;
 
 	driver_init();
-	log_info("libusb v%u.%u.%u.%u%s", g_version.major, g_version.minor,
+	log_info("stf4-demo v%u.%u.%u.%u%s", g_version.major, g_version.minor,
 		g_version.micro, g_version.nano, g_version.rc);
 
 	memset(uid, 0, sizeof(uid));
@@ -85,6 +86,10 @@ int main(void)
 
 #if DEMO_MD5_EN
 	demo_md5();
+#endif
+
+#if DEMO_SPI_N25QXX_EN
+	demo_n25qxx();
 #endif
 
 	while(1) {

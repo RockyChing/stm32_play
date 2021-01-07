@@ -11,11 +11,13 @@
 #ifndef _STM32F40X_DEMO_H
 #define _STM32F40X_DEMO_H
 
-#define DEMO_MD5_EN        (1)
+#define DEMO_MD5_EN              (1)
+#define DEMO_SPI_N25QXX_EN       (1)
 
 
 
 extern void demo_md5(void);
+extern void demo_n25qxx(void);
 
 
 #endif /* _STM32F40X_DEMO_H */

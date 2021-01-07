@@ -611,6 +611,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\demo\demo_md5.c</FilePath>
             </File>
+            <File>
+              <FileName>demo_spi_n25q128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\demo\demo_spi_n25q128.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -660,6 +665,26 @@
               <FileName>ext_int.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\user\driver\ext_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\spi_controller.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_w25qxx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\spi_w25qxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_util.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\driver_util.c</FilePath>
             </File>
           </Files>
         </Group>

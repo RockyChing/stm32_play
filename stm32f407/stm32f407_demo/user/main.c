@@ -88,6 +88,10 @@ int main(void)
 	demo_md5();
 #endif
 
+#if DEMO_RNG_EN
+	demo_rng();
+#endif
+
 #if DEMO_SPI_N25QXX_EN
 	demo_n25qxx();
 #endif

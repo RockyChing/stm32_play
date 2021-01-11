@@ -21,8 +21,10 @@
 #include <button.h>
 #include <ext_int.h>
 #include <uart.h>
+#include <rng.h>
 #include <spi.h>
 #include <spi_w25qxx.h>
+
 
 
 struct driver_struct {
@@ -37,6 +39,7 @@ static struct driver_struct g_drivers[] = {
 	{ "led",      led_init           },
 	{ "btn",      btn_init           },
 	{ "eint",     eint_init          },
+	{ "rng",      rng_init           },
 	{ "spi",      spi_init           },
 	{ "n25qxx",   w25qxx_init        },
 	{ NULL,       NULL               },

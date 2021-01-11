@@ -616,6 +616,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\demo\demo_spi_n25q128.c</FilePath>
             </File>
+            <File>
+              <FileName>demo_rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\demo\demo_rng.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -685,6 +690,11 @@
               <FileName>driver_util.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\user\driver\driver_util.c</FilePath>
+            </File>
+            <File>
+              <FileName>rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\driver\rng.c</FilePath>
             </File>
           </Files>
         </Group>
